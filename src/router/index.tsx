@@ -13,6 +13,6 @@ export const routes = [
   },
   {
     path: '/registration',
-    Element: <Registration />,
+    element: <Registration />,
   },
 ];

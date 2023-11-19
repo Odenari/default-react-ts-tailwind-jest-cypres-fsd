@@ -21,6 +21,7 @@ body {
   max-width: 1440px;
   margin: 0.5em auto;
 }
+
 :root {
   --h1-fs: 30px;
   --h1-fw: 800;
@@ -45,4 +46,17 @@ h2 {
 h3 {
   font-size: var(--h3-fs);
   font-weight: var(--h3-fw);
+}
+li {
+  text-decoration: none;
+}
+
+//custom classes
+.reg-btns {
+  background: linear-gradient(
+      180deg,
+      rgba(29, 26, 152, 0.2) 0%,
+      rgba(0, 0, 0, 0) 71.15%
+    ),
+    #7a77ff;
 }

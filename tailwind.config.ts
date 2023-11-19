@@ -8,6 +8,9 @@ export default {
         'linear-for-btns':
           'linear-gradient(160deg, rgba(95, 93, 183, 0.20) 22.37%, rgba(255, 255, 255, 0.15) 72.04%)',
       },
+      boxShadow: {
+        lightblue: '0px 0px 40px 2px rgba(135, 190, 255, 0.2);',
+      },
       colors: {
         black: {
           primary: '#313131',
@@ -29,7 +32,7 @@ export default {
           bright: '#3fec50',
         },
         gray: {
-          new: 'c6d0d5',
+          new: '#c6d0d5',
           main: '#9a9a9a',
         },
         red: {

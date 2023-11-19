@@ -15,7 +15,6 @@ const Login: React.FC = () => {
           </form>
         </header>
       </main>
-      {/* <Slider></Slider> */}
     </section>
   );
 };
