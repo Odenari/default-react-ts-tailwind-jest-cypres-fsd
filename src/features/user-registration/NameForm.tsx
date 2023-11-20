@@ -1,35 +1,71 @@
-import React from 'react';
-import Input from '../../shared/UI/Input';
-import NextBtn from '../../shared/UI/Buttons/NextBtn';
-// import { StepWizardChildProps } from 'react-step-wizard';
-// props: StepWizardChildProps
+import {
+  Text,
+  Title,
+  Group,
+  Paper,
+  TextInput,
+  Button,
+  Anchor,
+  Container,
+  Stack,
+  Center,
+} from '@mantine/core';
+import { DateInput } from '@mantine/dates';
+import { useForm } from '@mantine/form';
+import { useState } from 'react';
+
 const NameForm = () => {
+  const [date, setDate] = useState<Date | null>(null);
+  const form = useForm({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+    },
+  });
+
   return (
     <>
-      <h2 className="flex justify-center m-8">Personal Data</h2>
-      <div className="container max-w-[452px] h-[492px] p-10 flex flex-col  mx-auto items-center relative border border-solid border-white rounded-xl shadow-lightblue">
-        <form className="relative w-[372px] flex flex-col gap-6">
-          <Input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            labelName="Name"
-          />
-          <Input
-            type="text"
-            name="surname"
-            placeholder="Your surname"
-            labelName="Surname"
-          />
-          <Input
-            type="date"
-            name="birthday"
-            placeholder="MM/DD/YYYY"
-            labelName="Date of birth"
-          />
-          <NextBtn />
-        </form>
-      </div>
+      <Center>
+        <Title order={2}>Personal Data</Title>
+      </Center>
+      <Container size="52rem" mb="lg">
+        <Center>
+          <Paper miw="452px" radius="lg" p="xl" shadow="xl">
+            <Center>
+              <form
+                onSubmit={form.onSubmit(() => {
+                  console.log(form.values);
+                  console.log(date);
+                })}
+              >
+                <Stack>
+                  <TextInput
+                    // This allows us to connect form field with input value
+                    {...form.getInputProps('firstName')}
+                    maw="372px"
+                    label="Name"
+                    placeholder="Your name"
+                  />
+                  <TextInput
+                    {...form.getInputProps('lastName')}
+                    maw="372px"
+                    label="Surname"
+                    placeholder="Your surname"
+                  />
+                  <DateInput
+                    value={date}
+                    onChange={setDate}
+                    maw="372px"
+                    label="Date of birth"
+                    placeholder="MM/DD/YYYY"
+                  />
+                  <Button type="submit">Next</Button>
+                </Stack>
+              </form>
+            </Center>
+          </Paper>
+        </Center>
+      </Container>
     </>
   );
 };

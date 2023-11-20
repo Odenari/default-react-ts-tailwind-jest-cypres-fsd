@@ -6,13 +6,16 @@ export const routes = [
     path: '/',
     element: <App />,
     errorElement: <div>Error</div>,
-  },
-  {
-    path: '/login',
-    element: <Login />,
-  },
-  {
-    path: '/registration',
-    element: <Registration />,
+    children: [
+      {
+        path: '/login',
+        element: <Login />,
+      },
+
+      {
+        path: '/registration',
+        element: <Registration />,
+      },
+    ],
   },
 ];
